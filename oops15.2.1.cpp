@@ -4,22 +4,19 @@
 using namespace std;
 int main()
 {
-    ofstream myfile("myfile.txt");
-    myfile<<"Swati is a best girl";
-    myfile.close();
+    fstream myfile;
+    myfile.open("myfile.txt",ios::in);;
     
     char data;
-    ifstream readfile;
-    readfile.open("myfile.txt");
     while(1)
     {
-        readfile>>data;
-        if(readfile.eof())
+        myfile>>data;
+        if(myfile.eof())
         {
             break;
         }
         else cout<<data;
     }
-    readfile.close();
+    myfile.close();
     return 0;
 }
